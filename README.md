@@ -4,7 +4,22 @@
 
 A personal software project designed to transform reusable narrative configurations and content assets into narrated videos, coordinate their publication, and maintain traceable production records.
 
-[View published video samples on YouTube](https://www.youtube.com/@OracionDiaria1Minuto/shorts)
+## Real-world production showcase
+
+[**Watch the live production output on YouTube — OraciónDiaria1Minuto**](https://www.youtube.com/@OracionDiaria1Minuto/shorts)
+
+| Channel metric | Result |
+| --- | ---: |
+| Views over 365 days | **234.6K** |
+| Current subscribers | **1,967** |
+| Watch time over 365 days | **~1,200 hours** |
+| Channel video catalog (owner-reported) | **~567 videos** |
+
+The catalog includes approximately 440 Shorts and 127 videos longer than three minutes, as reported by the owner.
+
+Audience figures come from owner-provided YouTube Studio screenshots captured on November 27, 2026. The 365-day reporting window is November 27, 2025 through November 26, 2026. Rounded figures reflect the Studio display.
+
+These are channel-level outcomes, not a measurement of pipeline throughput. The number of automatically generated and publicly published videos, operational reliability and production costs remain subject to separate verification.
 
 ## The engineering challenge
 
@@ -42,6 +57,6 @@ This is an independent project, not a commissioned client engagement. Its output
 
 ## Evidence and scope
 
-The technical description is based on inspection of the original project's development branch on 27 November 2026. Production metrics and deployed revision remain subject to separate verification. The original source code, credentials and operational configuration are not distributed in this repository.
+The technical description is based on inspection of the original project's development branch on 27 November 2026. Operational production metrics and the deployed revision remain subject to separate verification; channel audience metrics are documented above. The original source code, credentials and operational configuration are not distributed in this repository.
 
-**Review status:** initial documentation; operational evidence and publication approval pending.
+**Review status:** channel audience evidence incorporated; operational evidence and publication approval pending.
