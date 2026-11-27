@@ -1,62 +1,77 @@
 # Autonomous AI Content Production
 
-**Engineering case study · Python · MoviePy / FFmpeg · PostgreSQL · API integration**
+**Production engineering case study · Python · FFmpeg · PostgreSQL · AI and platform integrations**
 
-A personal software project designed to transform reusable narrative configurations and content assets into narrated videos, coordinate their publication, and maintain traceable production records.
+An independent, configuration-driven content factory that turns reusable narratives and media assets into narrated videos, schedules cross-platform distribution and feeds audience analytics back into editorial selection.
 
-## Real-world production showcase
+## Production evidence
 
-[**Watch the live production output on YouTube — OraciónDiaria1Minuto**](https://www.youtube.com/@OracionDiaria1Minuto/shorts)
+| Operational metric | Audited result |
+| --- | ---: |
+| Recorded activity window | 305 days (Jan–Nov 2026) |
+| Generated video records | 228 |
+| Distinct videos with accepted publication records | 213 |
+| Accepted publication records | 498 |
+| Distribution platforms | YouTube and Facebook |
+| Analytics snapshots | 6,711 |
+| Failed publication records followed by later publication | 35 |
 
-| Channel metric | Result |
+Source: owner-supplied read-only production audit, November 27, 2026. Accepted records include scheduled content and reused assets; they are not a count of currently visible videos. The activity window is not continuous uptime or measured autonomy.
+
+## Live production showcase
+
+[**Watch real production output — OraciónDiaria1Minuto on YouTube**](https://www.youtube.com/@OracionDiaria1Minuto/shorts)
+
+| Channel-level audience metric | Result |
 | --- | ---: |
 | Views over 365 days | **234.6K** |
 | Current subscribers | **1,967** |
 | Watch time over 365 days | **~1,200 hours** |
-| Channel video catalog (owner-reported) | **~567 videos** |
+| Video catalog (owner-reported) | **~567 videos** |
 
-The catalog includes approximately 440 Shorts and 127 videos longer than three minutes, as reported by the owner.
+Source: owner-provided YouTube Studio screenshots, November 27, 2026, and owner-reported catalog counts (440 Shorts and 127 videos longer than three minutes). Channel totals are not fully attributable to the audited pipeline.
 
-Audience figures come from owner-provided YouTube Studio screenshots captured on November 27, 2026. The 365-day reporting window is November 27, 2025 through November 26, 2026. Rounded figures reflect the Studio display.
+Within the tracked publication sample, the internal analytics system recorded 99,961 views, 818.5 watch hours and 1,003 attributed subscriber gains as of November 23. These overlap the channel totals and must not be added to them.
 
-These are channel-level outcomes, not a measurement of pipeline throughput. The number of automatically generated and publicly published videos, operational reliability and production costs remain subject to separate verification.
-
-## The engineering challenge
-
-Producing videos repeatedly involves more than generating text: narration, visual timing, background music, metadata, publication calendars and external API interactions must work together. This project separates those responsibilities into a configuration-driven generation engine and a publication workflow.
-
-## Solution
-
-- Reusable narrative templates and channel-specific content catalogs.
-- Timeline-based composition of speech, images, synchronized text and music.
-- MoviePy/FFmpeg rendering to H.264 video and AAC audio.
-- PostgreSQL-backed content and publication tracking.
-- Rule-based scheduling and YouTube API integration.
-- AI-assisted metadata enrichment and thumbnail generation.
+## Engineering architecture
 
 ```mermaid
 flowchart LR
- A[Content and templates] --> B[Timeline and audio]
- B --> C[Video rendering]
- C --> D[(Publication records)]
- D --> E[Scheduler]
- E --> F[YouTube API]
+ A[Content and templates] --> B[Timeline and TTS]
+ B --> C[MoviePy / FFmpeg]
+ C --> D[(PostgreSQL)]
+ D --> E[Scheduler and publisher]
+ E --> F[YouTube / Facebook]
+ F --> G[YouTube Analytics]
+ G --> H[Editorial scoring]
+ H --> A
 ```
 
-## What this demonstrates
+- Reusable narrative templates and channel-specific catalogs.
+- Synchronized narration, images, on-screen text and background music.
+- OpenAI metadata enrichment and ElevenLabs speech integration.
+- PostgreSQL-backed publication coordination with row-level locking and state transitions.
+- Calendar-based scheduling, platform API adapters and operational notifications.
+- Development isolation, validated backup and historical restore rehearsal.
 
-Backend engineering, external service integration, media automation, configuration-driven design, separation of responsibilities, and operational troubleshooting.
+## Engineering decisions
 
-This is an independent project, not a commissioned client engagement. Its output demonstrates automated audiovisual composition, not AI-generated product motion or advertising fidelity.
+The system uses PostgreSQL as a work queue rather than adding a dedicated broker. Generation and publishing are separated, allowing already accepted scheduled content to be released independently of local rendering. Audience snapshots inform editorial selection.
 
-## Case study documentation
+The audit reports historical isolated validation involving 177 tests and a restore rehearsal with matching row counts across 12 tables. These validations were not rerun for this portfolio.
+
+## Technical case study
 
 - [Architecture and technology](docs/architecture.md)
-- [Engineering decisions, testing and reliability](docs/engineering-and-reliability.md)
-- [Results and evidence](docs/results-and-evidence.md)
+- [Engineering challenges and trade-offs](docs/engineering-challenges.md)
+- [Engineering and reliability](docs/engineering-and-reliability.md)
+- [Production metrics and definitions](docs/production-metrics.md)
+- [Audience results and evidence](docs/results-and-evidence.md)
 
-## Evidence and scope
+## Scope and transparency
 
-The technical description is based on inspection of the original project's development branch on 27 November 2026. Operational production metrics and the deployed revision remain subject to separate verification; channel audience metrics are documented above. The original source code, credentials and operational configuration are not distributed in this repository.
+This is an independent project, not a commissioned client engagement. The output demonstrates automated audiovisual composition rather than generated product motion or advertising fidelity.
 
-**Review status:** channel audience evidence incorporated; operational evidence and publication approval pending.
+The November 27 audit identified degraded generation and outstanding operational maintenance. Historical results do not establish current production readiness, continuous availability or complete autonomy. Actual operating costs and time savings are not verified.
+
+Original source code, credentials and private operational details are excluded. This documentation is based on reviewed development source, owner-supplied production audit reports and channel evidence.
